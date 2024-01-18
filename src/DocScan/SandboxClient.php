@@ -6,6 +6,7 @@ namespace Yoti\Sandbox\DocScan;
 
 use Psr\Http\Message\ResponseInterface;
 use Yoti\Constants;
+use Yoti\Exception\PemFileException;
 use Yoti\Http\Payload;
 use Yoti\Http\Request;
 use Yoti\Http\RequestBuilder;
@@ -47,7 +48,7 @@ class SandboxClient
      * @param array<string, mixed> $options (optional)
      *   SDK configuration options - {@see \Yoti\Util\Config} for available options.
      *
-     * @throws \Yoti\Exception\PemFileException
+     * @throws PemFileException
      */
     public function __construct(string $sdkId, string $pem, array $options = [])
     {

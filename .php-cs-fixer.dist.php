@@ -7,7 +7,9 @@ $finder = PhpCsFixer\Finder::create()
     ->in(__DIR__ . '/examples')
 ;
 
-return PhpCsFixer\Config::create()
+$config = new PhpCsFixer\Config();
+$config
+    ->setRiskyAllowed(true)
     ->setRules([
         'array_syntax' => ['syntax' => 'short'],
         'no_unused_imports' => true,
@@ -24,3 +26,5 @@ return PhpCsFixer\Config::create()
     ])
     ->setFinder($finder)
 ;
+
+return $config;
